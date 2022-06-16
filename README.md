@@ -1,0 +1,2 @@
+# LineReserveTicketSystem
+LINEを使った予約券システム
