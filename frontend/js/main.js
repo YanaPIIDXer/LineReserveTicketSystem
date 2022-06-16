@@ -5,9 +5,10 @@ new Vue({
             message: "",
         }
     },
-    mounted: function () {
+    mounted: async function () {
+        const secret = await fetch('./secret/secret.json')
         liff.init({
-            liffId: '',
+            liffId: secret.liffId,
         }).then(() => {
             this.message = "Hello, LIFF App."
         })
