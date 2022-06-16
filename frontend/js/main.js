@@ -6,7 +6,8 @@ new Vue({
         }
     },
     mounted: async function () {
-        const secret = await fetch('./secret/secret.json')
+        const secretResponse = await fetch('./secret/secret.json')
+        const secret = secretResponse.json()
         liff.init({
             liffId: secret.liffId,
         }).then(() => {
