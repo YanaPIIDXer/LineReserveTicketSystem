@@ -6,6 +6,13 @@ new Vue({
         }
     },
     mounted: function () {
-        this.message = "Hello, LIFF App."
+        liff.init({
+            liffId: '',
+        }).then(() => {
+            this.message = "Hello, LIFF App."
+        })
+        .catch(() => {
+            this.message = "Error, LIFF App."
+        })
     }
 })
